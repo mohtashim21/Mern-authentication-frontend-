@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/contact";
+const API_URL = "https://mern-authentication-backend-3ek3.onrender.com/api/contact";
 
 export const getContacts = async () => {
   try {
