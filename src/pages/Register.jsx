@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const API_URL = "http://localhost:8000/auth/user/";
+  const API_URL = "http://localhost:8000/auth/user";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

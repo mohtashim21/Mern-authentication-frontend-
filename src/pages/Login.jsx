@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext.jsx";
 
 const Login = () => {
-  const API_URL = "http://localhost:8000/auth/user/";
+  const API_URL = "http://localhost:8000/auth/user";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${API_URL}login`,
+        `${API_URL}/login`,
         { username, password },
         { withCredentials: true }
       );
