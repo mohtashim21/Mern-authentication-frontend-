@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext.jsx";
 
 const Login = () => {
-  const API_URL = "https://mern-authentication-backend-3ek3.onrender.com/auth/user";
+  // const API_URL = "https://mern-authentication-backend-3ek3.onrender.com/auth/user";
+  const API_URL = "http://localhost:8000/auth/user";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

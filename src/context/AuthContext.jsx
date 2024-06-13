@@ -9,7 +9,9 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await axios.get("https://mern-authentication-backend-3ek3.onrender.com/auth/user/check", {
+        // await axios.get("https://mern-authentication-backend-3ek3.onrender.com/auth/user/check",
+        await axios.get("http://localhost:8000/auth/user/check",
+        {
           withCredentials: true,
         });
         setIsAuthenticated(true);
