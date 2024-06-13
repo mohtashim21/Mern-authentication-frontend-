@@ -19,6 +19,7 @@ export const addContact = async (contact) => {
     });
     return response.data;
   } catch (error) {
+    console.log(error);
     throw new Error("Adding contact failed");
   }
 };
