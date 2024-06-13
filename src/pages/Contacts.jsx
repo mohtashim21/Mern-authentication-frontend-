@@ -11,8 +11,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Contacts = () => {
-  const API_URL = "https://mern-authentication-backend-3ek3.onrender.com/auth/user/logout";
-  // const API_URL = "http://localhost:8000/auth/user/logout";
+  // const API_URL = "https://mern-authentication-backend-3ek3.onrender.com/auth/user/logout";
+  const API_URL = "http://localhost:8000/auth/user/logout";
 
   const [contacts, setContacts] = useState([]);
   const [newContact, setNewContact] = useState({
