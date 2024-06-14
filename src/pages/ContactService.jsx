@@ -17,6 +17,7 @@ export const addContact = async (contact) => {
     const response = await axios.post(API_URL, contact, {
       withCredentials: true,
     });
+    console.log(response);
     return response.data;
   } catch (error) {
     console.log(error);
