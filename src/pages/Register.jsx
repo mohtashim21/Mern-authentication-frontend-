@@ -8,9 +8,10 @@ import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const API_URL = "https://mern-authentication-backend-lzc7.onrender.com/auth/user";
-  // const API_URL = "http://localhost:8000/auth/user";
-  // https://mern-authentication-backend-lzc7.onrender.com/
+  const baseURL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:8000/auth/user"
+      : "https://mern-authentication-backend-lzc7.onrender.com/auth/user";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +23,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(
-        `${API_URL}/register`,
+        `${baseURL}/register`,
         { username, password },
         { withCredentials: true }
       );

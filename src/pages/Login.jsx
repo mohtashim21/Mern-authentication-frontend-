@@ -9,9 +9,10 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext.jsx";
 
 const Login = () => {
-  const API_URL = "https://mern-authentication-backend-lzc7.onrender.com/auth/user";
-  // const API_URL = "http://localhost:8000/auth/user";
-  // https://mern-authentication-backend-lzc7.onrender.com/
+  const baseURL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:8000/auth/user"
+      : "https://mern-authentication-backend-lzc7.onrender.com/auth/user";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +25,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${API_URL}/login`,
+        `${baseURL}/login`,
         { username, password },
         { withCredentials: true }
       );

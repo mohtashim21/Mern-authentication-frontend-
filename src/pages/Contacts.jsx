@@ -11,9 +11,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Contacts = () => {
-  const API_URL = "https://mern-authentication-backend-lzc7.onrender.com/auth/user/logout";
-  // const API_URL = "http://localhost:8000/auth/user/logout";
-  // https://mern-authentication-backend-lzc7.onrender.com/
+  const baseURL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:8000/auth/user/logout"
+      : "https://mern-authentication-backend-lzc7.onrender.com/auth/user/logout";
 
   const [contacts, setContacts] = useState([]);
   const [newContact, setNewContact] = useState({
@@ -86,7 +87,7 @@ const Contacts = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post(`${API_URL}`, {}, { withCredentials: true });
+      await axios.post(`${baseURL}`, {}, { withCredentials: true });
       setIsAuthenticated(false);
       navigate("/login");
       toast.success("Logout successful");

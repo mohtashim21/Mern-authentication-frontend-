@@ -1,12 +1,13 @@
 import axios from "axios";
 
-const API_URL = "https://mern-authentication-backend-lzc7.onrender.com/api/contact";
-// const API_URL = "http://localhost:8000/api/contact";
-// https://mern-authentication-backend-lzc7.onrender.com/
+const baseURL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:8000/api/contact"
+    : "https://mern-authentication-backend-lzc7.onrender.com/api/contact";
 
 export const getContacts = async () => {
   try {
-    const response = await axios.get(API_URL, { withCredentials: true });
+    const response = await axios.get(baseURL, { withCredentials: true });
     return response.data;
   } catch (error) {
     throw new Error("Fetching contacts failed");
@@ -15,7 +16,7 @@ export const getContacts = async () => {
 
 export const addContact = async (contact) => {
   try {
-    const response = await axios.post(API_URL, contact, {
+    const response = await axios.post(baseURL, contact, {
       withCredentials: true,
     });
     console.log(response);
@@ -28,7 +29,7 @@ export const addContact = async (contact) => {
 
 export const deleteContact = async (id) => {
   try {
-    const response = await axios.delete(`${API_URL}/${id}`, {
+    const response = await axios.delete(`${baseURL}/${id}`, {
       withCredentials: true,
     });
     return response.data;
@@ -39,7 +40,7 @@ export const deleteContact = async (id) => {
 
 export const updateContact = async (id, contact) => {
   try {
-    const response = await axios.put(`${API_URL}/${id}`, contact, {
+    const response = await axios.put(`${baseURL}/${id}`, contact, {
       withCredentials: true,
     });
     return response.data;
