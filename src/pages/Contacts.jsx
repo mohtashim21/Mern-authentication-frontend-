@@ -44,6 +44,7 @@ const Contacts = () => {
       setContacts([...contacts, data]);
       setNewContact({ name: "", contactNumber: "", email: "" });
       toast.success("Contact added");
+      console.log(data);
     } catch (error) {
       toast.error(error.message);
     }
