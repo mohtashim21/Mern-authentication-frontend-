@@ -13,6 +13,7 @@ import axios from "axios";
 const Contacts = () => {
   const API_URL = "https://mern-authentication-backend-lzc7.onrender.com/auth/user/logout";
   // const API_URL = "http://localhost:8000/auth/user/logout";
+  // https://mern-authentication-backend-lzc7.onrender.com/
 
   const [contacts, setContacts] = useState([]);
   const [newContact, setNewContact] = useState({

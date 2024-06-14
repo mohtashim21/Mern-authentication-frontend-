@@ -9,7 +9,9 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
+        // after hosting
         await axios.get("https://mern-authentication-backend-lzc7.onrender.com/auth/user/check",
+        // for localhost
         // await axios.get("http://localhost:8000/auth/user/check",
         {
           withCredentials: true,

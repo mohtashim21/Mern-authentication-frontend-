@@ -2,6 +2,7 @@ import axios from "axios";
 
 const API_URL = "https://mern-authentication-backend-lzc7.onrender.com/api/contact";
 // const API_URL = "http://localhost:8000/api/contact";
+// https://mern-authentication-backend-lzc7.onrender.com/
 
 export const getContacts = async () => {
   try {
@@ -17,6 +18,7 @@ export const addContact = async (contact) => {
     const response = await axios.post(API_URL, contact, {
       withCredentials: true,
     });
+    console.log(response);
     return response.data;
   } catch (error) {
     console.log(error);
